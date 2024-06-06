@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables</title>
+</head>
+<body>
+<button
+        onclick=
+                "console.log(` Savatdagi maxsulot soni : ${jamiQiymat}`)"
+>
+    Jami Qiymat korsatish
+</button>
+<button
+        onclick=
+                "jamiQiymat += 1
+                    console.log(`Savatga qoshilga maxsulot soni:${jamiQiymat}`)"
+
+>
+    Savatchaga qoshish
+</button>
+<button
+        onclick=
+                "jamiQiymat += 2
+                    console.log(`Savatga qoshilga maxsulot soni:${jamiQiymat}`)"
+>
+    +2
+</button>
+<button
+        onclick=
+                "jamiQiymat += 3
+                    console.log(`Savatga qoshilga maxsulot soni:${jamiQiymat}`)"
+>
+    +3
+</button>
+<button
+        onclick=
+                "jamiQiymat = 0
+                    console.log(`Savatdagi maxsulotlar soni:${jamiQiymat}`)
+                    console.log(`Savatchada maxsulotlar qoshilmagan`)
+                    "
+>Savatchani boshatish</button>
+<script>
+    let jamiQiymat = 0;
+</script>
+</body>
+</html>
