@@ -2,46 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Variables</title>
+    <title>Tosh Qaychi Qog'oz</title>
 </head>
 <body>
-<button
-        onclick=
-                "console.log(` Savatdagi maxsulot soni : ${jamiQiymat}`)"
->
-    Jami Qiymat korsatish
-</button>
-<button
-        onclick=
-                "jamiQiymat += 1
-                    console.log(`Savatga qoshilga maxsulot soni:${jamiQiymat}`)"
+<p>Tosh Qaychi Qog'oz</p>
 
->
-    Savatchaga qoshish
-</button>
 <button
-        onclick=
-                "jamiQiymat += 2
-                    console.log(`Savatga qoshilga maxsulot soni:${jamiQiymat}`)"
->
-    +2
-</button>
+        onclick="
+    playGame('tosh')
+"
+>Tosh</button>
 <button
-        onclick=
-                "jamiQiymat += 3
-                    console.log(`Savatga qoshilga maxsulot soni:${jamiQiymat}`)"
->
-    +3
-</button>
+        onclick="
+    playGame('qaychi')
+"
+>Qaychi</button>
 <button
-        onclick=
-                "jamiQiymat = 0
-                    console.log(`Savatdagi maxsulotlar soni:${jamiQiymat}`)
-                    console.log(`Savatchada maxsulotlar qoshilmagan`)
-                    "
->Savatchani boshatish</button>
-<script>
-    let jamiQiymat = 0;
-</script>
+        onclick="
+    playGame('qog\'oz')
+"
+>Qog'oz</button>
+
+<button onclick="
+    hisob.tie=0
+    hisob.loses=0
+    hisob.wins=0
+    alert('O\'yin qayta boshlandi hisoblar 0ga tenglashtirildi')
+    localStorage.removeItem('hisob')
+">
+    Qayta boshlash
+</button>
 </body>
+<!--<script>-->
+
+<!--    let hisob=JSON.parse(localStorage.getItem('hisob'))-->
+
+<!--    if (hisob === null){-->
+<!--        hisob = {-->
+<!--            tie: 0,-->
+<!--            loses: 0,-->
+<!--            wins: 0-->
+<!--        }-->
+<!--    }-->
+
+
+<!--    function playGame(userChoice){-->
+<!--        const computer = computerChoice()-->
+
+<!--        let result = ''-->
+
+<!--        if (userChoice === 'tosh'){-->
+<!--            if(computer === 'Tosh'){-->
+<!--                result = 'Teng'-->
+<!--            }-->
+<!--            else if(computer === 'Qog\'oz'){-->
+<!--                result = 'Yutqazdingiz'-->
+<!--            }-->
+<!--            else if(computer === 'Qaychi'){-->
+<!--                result = 'G\'alaba qozondingiz'-->
+<!--            }-->
+<!--        }else if (userChoice === 'qaychi'){-->
+<!--            if(computer === 'Tosh'){-->
+<!--                result = 'Yutqazdingiz'-->
+<!--            }-->
+<!--            else if(computer === 'Qog\'oz'){-->
+<!--                result = 'G\'alaba qozondingiz'-->
+<!--            }-->
+<!--            else if(computer === 'Qaychi'){-->
+<!--                result = 'Teng'-->
+<!--            }-->
+<!--        }-->
+<!--        else if (userChoice === 'qog\'oz'){-->
+<!--            if(computer === 'Tosh'){-->
+<!--                result = 'G\'alaba qozondingiz'-->
+<!--            }-->
+<!--            else if(computer === 'Qog\'oz'){-->
+<!--                result = 'Teng'-->
+<!--            }-->
+<!--            else if(computer === 'Qaychi'){-->
+<!--                result = 'Yutqazdingiz'-->
+<!--            }-->
+<!--            // hisob update qiladi-->
+<!--        }-->
+<!--        if (result === 'Teng'){-->
+<!--            hisob.tie++;-->
+<!--        }-->
+<!--        else if (result === 'Yutqazdingiz'){-->
+<!--            hisob.loses++-->
+<!--        }-->
+<!--        else if (result === 'G\'alaba qozondingiz'){-->
+<!--            hisob.wins++-->
+<!--        }-->
+
+<!--        localStorage.setItem('hisob',JSON.stringify(hisob))-->
+
+<!--        alert(-->
+<!--            `Siz  ${userChoice} tanladingiz. Komputer esa ${computer} tanladi.Natijada esa ${result},-->
+<!--             G'alaba soni: ${hisob.wins}-->
+<!--             Mag'lubiyat soni: ${hisob.loses}-->
+<!--             Teng: ${hisob.tie}-->
+<!--               `-->
+<!--        )-->
+<!--    }-->
+<!--    function computerChoice() {-->
+<!--        const randomNumber = Math.random()-->
+<!--        let computer = ''-->
+<!--        if(randomNumber >= 0 && randomNumber <1/3){-->
+<!--            computer = ('Tosh')-->
+<!--        }else if(randomNumber >= 1/3 && randomNumber < 2/3){-->
+<!--            computer = ('Qog\'oz')-->
+<!--        }else if (randomNumber >= 2/3 && randomNumber < 1){-->
+<!--            computer = ('Qaychi')-->
+<!--        }-->
+<!--        return computer-->
+<!--    }-->
+<!--</script>-->
+<script src="index.js"></script>
 </html>

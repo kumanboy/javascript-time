@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Follow Youtube channel</p>
+<button onclick="subscribe()" class="btn">Subscribe</button>
+
+<p>Amazon Yetkazib berish Hisoblagichi</p>
+<input placeholder="Buyurtma qiymatini kiriting" class="cost-input" onkeydown="enterPress(event)">
+<button onclick="calculateTotal()"
+>Hisobla</button>
+<p class="total-cost"></p>
+<script>
+    function calculateTotal(){
+        const inputTag = document.querySelector('.cost-input')
+
+        let cost = Number(inputTag.value)
+        console.log(cost)
+
+        if (cost < 40){
+            cost = cost+10
+        }
+
+        document.querySelector('.total-cost').innerHTML = `$${cost}`
+    }
+
+    function subscribe() {
+        const btn = document.querySelector('.btn')
+
+        if (btn.innerHTML === 'Subscribe') {
+            btn.innerHTML = 'Subscribed'
+        } else {
+            btn.innerHTML = 'Subscribe'
+        }
+    }
+    function enterPress(event){
+        if (event.key === 'Enter') {
+            calculateTotal()
+        }
+    }
+
+</script>
+</body>
+</html>
